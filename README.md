@@ -3,6 +3,18 @@
 
 ## AWS
 
+- Move and rename all S3 objects with the same prefix path:
+``#!/bin/bash
+
+bucketname='bluebite-enablement-logging'
+for key in $(aws s3api list-objects --bucket "${bucketname}" --prefix "bluebite-enablement" --query "Contents[].{Object:Key}" --output text) ;
+  do
+    echo "$key"
+    FILENAME=$($key | grep -o '.\{36\}$')
+    echo $FILENAME
+    #aws s3 mv s3://$bucketname/$key s3://$bucketname/access/$FILENAME
+  done``
+
 - Clear DynamoDB table:
 ``aws dynamodb scan --profile sts --region us-east-1 \
    --table-name trident_stage_event \
