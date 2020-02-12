@@ -3,6 +3,12 @@
 
 ## AWS
 
+
+- Before using AWS CLI:
+  - set region ``export AWS_REGION=us.east.1``
+  - set profile ``export AWS_PROFILE=sts``
+
+
 - Move and rename all S3 objects with the same prefix path:
 `` #!/bin/bash
 
