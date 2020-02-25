@@ -2,7 +2,7 @@
 
 
 ## AWS
-
+- Accessing AWS Elasticsearch - https://www.jeremydaly.com/access-aws-vpc-based-elasticsearch-cluster-locally/
 
 - Before using AWS CLI:
   - set region ``export AWS_REGION=us.east.1``
